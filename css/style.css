@@ -8,15 +8,24 @@
       box-sizing: border-box;
 }
 
+:root {
+      --BODY-BGCOLOR-VIBRANT: hsl(95, 80%, 12%);
+      --BODY-BGCOLOR: hsl(95, 80%, 3%);
+      --TXT-COLOR-DRK: black;
+      --TXT-COLOR-EASY: rgb(165, 157, 138);
+      --TXT-COLOR-LGT: rgb(250, 255, 181);
+}
+
 /* GENERAL */
 
 body {
       min-height: 100vh;
-      background-color: rgb(37, 82, 7);
+      background-color: var(--BODY-BGCOLOR);
       text-align: center;
       font: 2rem "Nunito", sans-serif;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
 }
 
 main {
@@ -26,13 +35,13 @@ main {
 
 header, footer {
       width: 100%;
-      background-color: rgb(8, 19, 2);
+      background-color: var(--BODY-BGCOLOR-VIBRANT);
       position: sticky;
-      color: rgb(180, 180, 65);
+      color: var(--TXT-COLOR-LGT);
 }
 
 header {
-      
+      font: 2rem "Segoe Script", sans-serif;
       padding: 2rem;
 }
 
@@ -40,12 +49,13 @@ header h1 {
       text-transform: uppercase;
 }
 
-article {
-      
-} 
+/* article {
+      overflow: scroll;
+}  */
 
 article h2 {
       background-color: rgb(10, 61, 10);
+      color: var(--TXT-COLOR-LGT);
 }
 
 article img {
@@ -54,22 +64,29 @@ article img {
 
 article p {
       text-align: justify;
+      color: var(--TXT-COLOR-EASY);
 }
 
 .article-track {
-    display: flex;  
-    gap: 4vmin;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, 0%);
+      max-width: 100vw;
+      display: flex;  
+      justify-content: center;
+      gap: 5vw;
+      position: relative;
+      /* left: 50%;
+      top: 50%; */
+      transform: translate(0%, 0%);
+      overflow: visible;
 }
 
 .next-button,
 .previous-button {
-      width: 4vh;
-      height: auto;
-      background-color: hsla(0, 0%, 0%, 0.8);
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: var(--BODY-BGCOLOR-VIBRANT); 
+      border: none;
+      border-radius: 50%;
 }
 
 
